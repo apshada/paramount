@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "933646552643",
+    "firebase_url": "https://paramountinfotechapp.firebaseio.com",
+    "project_id": "paramountinfotechapp",
+    "storage_bucket": "paramountinfotechapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933646552643:android:1d504e04591a96d0e3cef6",
+        "android_client_info": {
+          "package_name": "com.paramountinfotech.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933646552643-ng8uj1pnd3vksvtcehcp5unnljptlmk4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJdqWNemeZ6qowJalM-5dAkMYxcZVagzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933646552643-ng8uj1pnd3vksvtcehcp5unnljptlmk4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "933646552643-cjkmi1g84getlnfjh5r9k3l758sad5r9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.paramountinfotech.com"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
