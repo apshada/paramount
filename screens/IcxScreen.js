@@ -1,9 +1,10 @@
 import React, { Component, useEffect, useState } from 'react';
-import {View,Text,Button, FlatList, StyleSheet, Image, YellowBox} from 'react-native';
+import {View,Text,Button,  StyleSheet, Image, YellowBox} from 'react-native';
 import * as firebase from 'firebase';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ChatBackground from '../components/ChatBackGround'
 import Header from '../components/Header'
+import ReversedFlatList from 'react-native-reversed-flat-list';
 
 YellowBox.ignoreWarnings(['Setting a timer']);
 const IcxScreen = () => {
@@ -49,8 +50,8 @@ const IcxScreen = () => {
             // <ChatBackground>
               <View style={styles.MainContainer}>
            
-              <FlatList
-               inverted={true}
+              <ReversedFlatList
+              //  inverted={true}
               style={styles.container}
             data={icxArray}
             renderItem={({ item }) => (

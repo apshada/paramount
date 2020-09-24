@@ -23,10 +23,13 @@ exports.sendPushNotification = functions.database
           //alert(expoToken);
 
           var expoToken = childSnapshot.val().expoToken;
-          var isIcxEnabled = childSnapshot.val().icxservice
-          // console.log(childSnapshot.val().icxservice)
+          const isIcxEnabled = childSnapshot.val().icxservice
+          console.log("Index Service :" + childSnapshot.val().icxservice)
           console.log("token : " + expoToken);
+          // JSON.stringify(isIcxEnabled)
+          
           if (expoToken && isIcxEnabled === "true") {
+            console.log("I am first")
             const message = {
               to: expoToken,
               sound: 'default',
@@ -34,7 +37,7 @@ exports.sendPushNotification = functions.database
               body: Icxdata,
 
             };
-          
+            console.log("I am Second")
             fetch('https://exp.host/--/api/v2/push/send', {
               method: 'POST',
               headers: {
@@ -43,10 +46,14 @@ exports.sendPushNotification = functions.database
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify(message),
+              
             });
-            
-          }
+            console.log("Third")
+          
+        }
+      
         });
+        
         return Promise.all(messages);
       })
   });
@@ -71,6 +78,7 @@ exports.sendPushNotification = functions.database
 
           var expoToken = childSnapshot.val().expoToken;
           var isFcxEnabled = childSnapshot.val().fcxservice
+          console.log("FCX : " + isFcxEnabled)
           // console.log(childSnapshot.val().icxservice)
           console.log("token : " + expoToken);
           if (expoToken && isFcxEnabled === "true") {

@@ -48,7 +48,7 @@ class EconomicScreen extends Component {
                 {...props}
                
                 onShouldStartLoadWithRequest={this.shouldStartLoadWithRequestHandler}
-        source={{ uri: 'https://stockwidgetnews.netlify.app/' }}
+        source={{ uri: 'https://paramounteconomic.netlify.app/' }}
         style={{ marginTop: 20 }}
        
       />

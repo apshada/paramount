@@ -1,10 +1,10 @@
 import React, { Component, useEffect, useState } from 'react';
-import {View,Text,Button, FlatList, Image, YellowBox} from 'react-native';
+import {View,Text,Button,  Image, YellowBox} from 'react-native';
 import * as firebase from 'firebase';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ChatBackground from '../components/ChatBackGround'
 import Header from '../components/Header'
-
+import ReversedFlatList from 'react-native-reversed-flat-list';
 
 YellowBox.ignoreWarnings(['Setting a timer']);
 const Tab = createBottomTabNavigator();
@@ -65,8 +65,8 @@ if(ccxUser === "true"){
           
               <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
            
-              <FlatList
-               inverted={true}
+              <ReversedFlatList
+              //  inverted={true}
             data={ccxArray}
             renderItem={({ item }) => (
               <View style={{ display : 'flex',flexDirection : 'column', justifyContent : 'space-between', backgroundColor : '#fff', borderRadius : 4, borderWidth : 0.5,  padding : 10, margin : 10 }}>

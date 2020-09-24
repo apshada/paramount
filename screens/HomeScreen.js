@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import {View,Text,Button, YellowBox, StyleSheet , ImageBackground, StatusBar, Image, BackHandler,  ToastAndroid} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
+import * as firebase from 'firebase';
+import { ActivityIndicator } from 'react-native';
 
 
 YellowBox.ignoreWarnings(['Setting a timer']);
 class HomeScreen extends Component {
     constructor(props) {
         super(props);
-        this.state = {  };
+        this.state = {imageUri: ""};
     }
     
     componentDidMount() {
       BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
+      const itemsRef3 = firebase.database().ref('images');
+      itemsRef3.on('value', (snapshot) => {
+        let items = snapshot.val();
+        console.log(items.images)
+       JSON.stringify(items.images)
+       this.setState({ imageUri : items.images })
+      //  setUri(items.offer)
+       //  setUri(newState3)
+        
+      });     
       
     }
   
@@ -30,19 +41,15 @@ class HomeScreen extends Component {
       ToastAndroid.show("Press Home to Exit", ToastAndroid.SHORT);
     };
     
+
     render() {
+
+      if(this.state.imageUri.length > 0){
+
+      
       
         return (
-         
-        //   <AnimatedSplash
-        //   translucent={false}
-        //   isLoaded={this.state.isLoaded}
-        //   logoImage={require("../assets/logo01.png")}
-        //   backgroundColor={"transparent"}
-        //   logoHeight={550}
-        //   logoWidth={450}
-
-        // >
+       
           <View style={{flex:1}} >  
            <StatusBar  
               backgroundColor='black'  
@@ -51,12 +58,8 @@ class HomeScreen extends Component {
        
         
             <View style={styles.container}>
-            {/* <Appbar.Header style={{ height : 10, backgroundColor : 'white'}}> */}
-              
-          {/* <Appbar.Content title="Home" style={{ marginHorizontal : 3 }}  /> */}
-        {/* </Appbar.Header> */}
-
-            <ImageBackground source={require('../assets/one.jpg')} style={styles.image}>
+        
+            <ImageBackground source={{uri: `${this.state.imageUri}`}} style={styles.image}>
          
             </ImageBackground>
           </View>
@@ -66,6 +69,13 @@ class HomeScreen extends Component {
           
         );
     }
+    else{
+      return(
+      <ActivityIndicator />
+      )
+    }
+  }
+  
 }
 
 const styles = StyleSheet.create({

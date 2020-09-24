@@ -3,7 +3,7 @@ import {View,Text,Button, FlatList, Image, YellowBox} from 'react-native';
 import * as firebase from 'firebase';
 import ChatBackground from '../components/ChatBackGround'
 import Header from '../components/Header'
-
+import ReversedFlatList from 'react-native-reversed-flat-list';
 
 YellowBox.ignoreWarnings(['Setting a timer']);
 const FcxScreen = () => {
@@ -54,7 +54,7 @@ if(userfcx === "true"){
             
               <View style={{flex:1,justifyContent:'center',alignContent:'center'}}>
            
-              <FlatList
+              <ReversedFlatList
               //  inverted={true}
             data={fcxArray}
             renderItem={({ item }) => (

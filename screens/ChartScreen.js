@@ -17,7 +17,7 @@ class ChartScreen extends Component {
                 {/* <Text style={{textAlign:'center',marginBottom:50}}>ChartScreen screen (HomeStackNavigator)</Text> */}
                 <Image source={require('../assets/para.png')} style={{ height : 53, width : 225, marginLeft : 10 }} />
                 <WebView
-        source={{ uri: 'https://forexmarket.netlify.app/' }}
+        source={{ uri: 'https://paramountchart.netlify.app/' }}
         style={{ marginTop: 20 }}
         onShouldStartLoadWithRequest={this.shouldStartLoadWithRequestHandler}
       />

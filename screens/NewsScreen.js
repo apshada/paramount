@@ -59,7 +59,7 @@ class NewsScreen extends Component {
       /> */}
       <WebView
         {...props}
-        source={{ uri: 'https://paramountnews.netlify.app/' }}
+        source={{ uri: 'https://paramountinfonews.netlify.app/' }}
         style={{ marginTop: 20 }}
         // onShouldStartLoadWithRequest={this.shouldStartLoadWithRequestHandler}
         onNavigationStateChange={this.navigationStateChangedHandler}
