@@ -131,8 +131,7 @@ exports.sendPushNotification2 = functions.database
           if (expoToken && isCcxEnabled === "true") {
             const message = {
               to: expoToken,
-              sound: 'Comex',
-              title: 'Index',
+              title: 'Comex',
               body: Ccxdata,
 
             };
